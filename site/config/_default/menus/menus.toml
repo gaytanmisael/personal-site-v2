@@ -1,0 +1,16 @@
+# Main Menu
+[[main]]
+name = "about me"
+URL = "about-me"
+
+[[main]]
+name = "works+"
+URL = "works"
+
+[[main]]
+name = "journal+"
+URL = "journal"
+
+[[main]]
+name = "hire me"
+URL = "hire-me"

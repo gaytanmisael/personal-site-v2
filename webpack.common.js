@@ -17,13 +17,8 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        compressed: {
-          test: path.join(__dirname, "src/dependencies/js"),
-          name: "compressed",
-          chunks: "all"
-        },
         cssbundle: {
-          test: path.join(__dirname, "src/dependencies/css"),
+          test: path.join(__dirname, "src/dependencies/scss"),
           name: "compressed",
           chunks: "all",
           enforce: true
@@ -34,14 +29,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader",
-        options: {
-          name: "name=/[hash].[ext]",
-        },
-      },
-
       {test: /\.json$/, loader: "json-loader"},
 
       {
@@ -50,13 +37,18 @@ module.exports = {
         exclude: /node_modules/,
         options: {cacheDirectory: true},
       },
-
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
         use: [
           {
             loader: 'style-loader',
+          },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            }
           },
           {
             loader: 'css-loader',
@@ -78,6 +70,19 @@ module.exports = {
           }
         ],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.((png)|(eot)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "file-loader",
+        options: {
+          name: "name=/[hash].[ext]",
+          esModule: false
+        },
+      },
+
     ],
   },
 

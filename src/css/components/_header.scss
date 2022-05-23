@@ -1,0 +1,63 @@
+.navbar {
+  padding: 40px 0 0;
+}
+
+.menu-icon {
+  cursor: pointer;
+  padding-left: 10px;
+  position: absolute;
+  left: 50%;
+  margin-left: -12.5px;
+  width: 25px;
+
+  &:hover {
+    span {
+      &::before{
+        right: -12px;
+      }
+
+      &::after {
+        left: -12px;
+      }
+
+      &:nth-child(2){
+        margin: 7px 0;
+      }
+    }
+  }
+
+  span {
+    display: block;
+    background: #111;
+    height: 5px;
+    width: 5px;
+    transition: all .1s ease-in-out;
+
+    &::before{
+      content: '';
+      display: block;
+      background: #111;
+      height: 5px;
+      position: relative;
+      right: -10px;
+      width: 5px;
+      transition: all .1s ease-in-out;
+    }
+
+
+    &::after {
+      content: '';
+      display: block;
+      background: #111;
+      height: 5px;
+      position:relative;
+      left: -10px;
+      top: -5px;
+      width: 5px;
+    }
+
+    &:nth-child(2) {
+      margin: 5px 0;
+    }
+  }
+}

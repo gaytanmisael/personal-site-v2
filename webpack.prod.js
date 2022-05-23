@@ -12,7 +12,7 @@ module.exports = merge(common, {
 
   output: {
     filename: "[name].[hash:5].js",
-    chunkFilename: "[id].[hash:5].css",
+    chunkFilename: "[id].[hash:5].js",
     path: path.resolve(__dirname, "dist"),
   },
 
@@ -23,7 +23,13 @@ module.exports = merge(common, {
         filename: "[name].[hash:5].css",
         chunkFilename: "[id].[hash:5].css",
       }),
-      new TerserPlugin(),
+      new TerserPlugin({
+        parallel: true,
+        extractComments: "all",
+        terserOptions: {
+          ecma: 6,
+        },
+      }),
       new CssMinimizerPlugin(),
     ],
   },

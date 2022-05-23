@@ -1,0 +1,29 @@
+########################### Default parameters ###########################
+logo = "images/logo.svg"
+
+description = "disciplined and results oriented with an uncanny ability to transform ideas into reality rapidly for projects, products and systems."
+author = "misael gaytan"
+
+# Contact Info
+email = "gaytanmisael@gmail.com"
+
+# Preloader
+[preloader]
+enable = true
+
+# Social
+[[social]]
+icon = "fa-brands fa-github"
+url = "https://github.com/gaytanmisael"
+
+[[social]]
+icon = "fa-solid fa-rss"
+url = ""
+
+[[social]]
+icon = "fa-brands fa-twitter"
+url = "https://twitter.com/gaytanmisael"
+
+[[social]]
+icon = "fa-brands fa-linkedin-in"
+url = ""
