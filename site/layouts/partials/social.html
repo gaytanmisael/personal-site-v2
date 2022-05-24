@@ -2,7 +2,7 @@
 <ul class="social-icons list-inline">
   {{ range .Site.Params.social }}
   <li class="list-inline-item">
-    <a href="{{ .URL | safeURL }}" class="{{ .icon }}" target="_blank" rel="noreferrer">
+    <a href="{{ .url | safeURL }}" class="{{ .icon }}" target="_blank" rel="noreferrer">
     </a>
   </li>
   {{ end }}

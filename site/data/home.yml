@@ -1,0 +1,13 @@
+############################### Homepage #################################
+text:
+  enable: true
+  logo: "/images/logo.svg"
+  title: >
+    hi, i'm misael - a designer / developer
+  description: >
+    disciplined and results oriented with an uncanny ability <br/>
+    to transform ideas into reality rapidly for projects, products and systems.
+  buttons:
+    - label: "hire me+"
+      color: "btn-outline-primary"
+      link: "/hire-me"

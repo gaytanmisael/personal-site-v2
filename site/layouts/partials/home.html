@@ -1,9 +1,20 @@
+{{ "<!-- home -->" | safeHTML }}
+{{ if  .text.enable }}
+{{ with .text }}
 <section class="home-text text-center">
   <div class="container">
-    <img src="/images/logo.svg" alt="misael gaytan" width="133">
+    <img src="{{ .logo }}" alt="misael gaytan" width="133">
     <h2>
-      hi, i'm misael - a designer / developer
+      {{ .title }}
     </h2>
-    <span class="fs-5">disciplined and results oriented with an uncanny ability<br/>to transform ideas into reality rapidly for projects, products and systems.</span>
+    <span class="fs-5">{{ .description | safeHTML }}</span>
+    {{ range .buttons }}
+    <div class="mt-5">
+      <a class="btn {{ .color }}" href="{{ .link | absURL }}">{{ .label }}</a>
+    </div>
+    {{ end }}
   </div>
 </section>
+{{ end }}
+{{ end }}
+{{ "<!-- /home -->" | safeHTML }}

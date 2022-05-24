@@ -3,7 +3,7 @@
   {{- partial "head" . -}}
 
 <body>
-
+  {{- partial "overlay" . -}}
   <div class="site-wrapper">
     {{ block "header" . }}{{ partial "header" . }}{{end}}
 
@@ -12,6 +12,8 @@
     {{ block "footer" . }}{{ partial "footer" . }}{{end}}
   </div>
 
+  {{ $compressed := .Site.Data.webpack.compressed }}{{ with $compressed.js }}
+  <script src="{{ relURL . }}"></script>{{ end }}
   {{ $script := .Site.Data.webpack.main }}
   {{ with $script.js }}
     <script src="{{ relURL . }}"></script>

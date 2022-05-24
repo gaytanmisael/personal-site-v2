@@ -1,5 +1,5 @@
 ########################### Default parameters ###########################
-logo = "images/logo.svg"
+logo = "/images/logo.svg"
 
 description = "disciplined and results oriented with an uncanny ability to transform ideas into reality rapidly for projects, products and systems."
 author = "misael gaytan"
@@ -8,7 +8,7 @@ author = "misael gaytan"
 email = "gaytanmisael@gmail.com"
 
 # Preloader
-[preloader]
+[overlay_menu]
 enable = true
 
 # Social

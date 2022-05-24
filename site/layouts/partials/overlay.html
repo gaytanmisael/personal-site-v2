@@ -1,0 +1,31 @@
+{{ if .Site.Params.overlay_menu.enable }}
+{{ "<!-- Overlay Menu -->" | safeHTML }}
+<div id="overlay-menu" class="overlay-menu d-flex align-items-start flex-column">
+  {{ "<!-- Logo, close icon -->" | safeHTML }}
+  <nav class="navbar navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="{{ .Site.Params.logo | absURL }}" alt="misael gaytan">
+      </a>
+      <div id="close-icon" class="close-icon">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+  </nav>
+  {{ "<!-- /logo, close icon -->" | safeHTML }}
+
+  {{ "<!-- navigation menu -->" | safeHTML }}
+  <ul class="vertical-menu mt-auto">
+    {{ range .Site.Menus.main }}
+    <li><a href="{{ .URL }}"> {{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+  {{ "<!-- /navigation menu -->" | safeHTML }}
+
+  <footer class="text-center mt-auto">
+    <div class="container">
+      <span class="copyright">&copy; copyright 2022 misael gaytan. all rights reserved.</span>
+    </div>
+  </footer>
+</div>
+{{ end }}

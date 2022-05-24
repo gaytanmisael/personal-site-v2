@@ -1,5 +1,6 @@
 {{ define "main" }}
 
-{{- partial "home" . -}}
+{{ $data := index .Site.Data }}
+{{- partial "home" $data.home -}}
 
 {{ end }}
